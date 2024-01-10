@@ -1,25 +1,152 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+import Alert from "./components/Alert";
+import Navbar from "./components/Navbar";
+import Textform from "./components/Textform";
+import React, { useState } from "react";
 
 function App() {
+  const [mode, setMode] = useState("light");
+  const [alert, setAlert] = useState(null);
+  const [color, setColor] = useState(null);
+  const showAlert = (msg, type) => {
+    setAlert({
+      msg: msg,
+      type: type,
+    });
+  };
+  const changeMode = () => {
+    //console.log('called' + mode)
+    if (mode === "light") 
+    {
+      document.title="TextUtils: Dark Mode";
+      setMode("dark");
+      document.body.style.backgroundColor = "grey";
+      setColor("grey");
+      showAlert("Dark Mode is enabled", "success");
+      setTimeout(() => {
+        setAlert(null);
+      }, 1000);
+    } 
+    else 
+    {
+      document.title="TextUtils: Light Mode";
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      setColor("white");
+      showAlert("Light Mode is enabled", "primary");
+      setTimeout(() => {
+        setAlert(null);
+      }, 1000);
+    }
+  };
+
+  const changeColor = (e) => {
+    //console.log(e.target.id);
+    if (e.target.id === "1") 
+    {
+      if (document.body.style.backgroundColor === "red") 
+      {
+        document.title="TextUtils: Light Mode";
+        showAlert("Light Mode is enabled", "primary");
+        setTimeout(() => {
+          setAlert(null);
+        }, 1000);
+        document.body.style.backgroundColor = "white";
+        setColor("white");
+        setMode('light');
+      } 
+      else 
+      {
+        document.title="TextUtils: Red Mode";
+        document.body.style.backgroundColor = "red";
+        setColor("red");
+        showAlert("Danger Mode is enabled", "primary");
+        setTimeout(() => {
+          setAlert(null);
+        }, 1000);
+        setMode('dark');
+      }
+    } 
+    else if (e.target.id === "2") 
+    {
+      if (document.body.style.backgroundColor === "green") 
+      {
+        document.title="TextUtils: Light Mode";
+        document.body.style.backgroundColor = "white";
+        setColor("white");
+        showAlert("Light Mode is enabled", "primary");
+        setTimeout(() => {
+          setAlert(null);
+        }, 1000);
+        setMode('light');
+      } 
+      else 
+      {
+        document.title="TextUtils: Green Mode";
+        document.body.style.backgroundColor = "green";
+        setColor("green");
+        showAlert("Green Mode is enabled", "success");
+        setTimeout(() => {
+          setAlert(null);
+        }, 1000);
+        setMode('dark');
+      }
+    } 
+    else
+     {
+      if (document.body.style.backgroundColor === "purple") 
+      {
+        document.title="TextUtils: Light Mode";
+        document.body.style.backgroundColor = "white";
+        setColor("white");
+        showAlert("Light Mode is enabled", "primary");
+        setTimeout(() => {
+          setAlert(null);
+        }, 1000);
+        setMode('light');
+      } 
+      else 
+      {
+        document.title="TextUtils: Purple Mode";
+        document.body.style.backgroundColor = "purple";
+        setColor("purple");
+        showAlert("Purple Mode is enabled", "primary");
+        setTimeout(() => {
+          setAlert(null);
+        }, 1000);
+        setMode('dark');
+      }
+    }
+  };
+  // document.body.style.backgroundColor='black';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+      <Navbar
+        title="Textutils"
+        about="Crushes"
+        link="Contact"
+        anlink="Gallery"
+        mode={mode}
+        toggleMode={changeMode}
+        changeColor={changeColor}
+        Color={color}
+      />
+      <Alert alert={alert} />
+     
+        <div className="container my-3">
+         <Textform
+          heading="Enter your comments here"
+          Color={color}
+          mode={mode}
+          showAlert={showAlert}
+          setAlert={setAlert}
+        /> 
+       </div> 
+
+       {/* <About/> */}
+    </>
   );
 }
-
 export default App;

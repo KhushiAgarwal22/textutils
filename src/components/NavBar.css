@@ -1,0 +1,13 @@
+.butt{
+    border-radius: 50%;
+    height:5vmin;
+    width:5vmin;
+}
+.butt2{
+    background-color: purple;
+    border: 0;
+}
+.butt2:hover{
+    background-color: rgb(93, 2, 93);
+    border: 0;
+}
