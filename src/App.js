@@ -1,9 +1,12 @@
 // import logo from './logo.svg';
+import About from "./About";
 import "./App.css";
 import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
 import Textform from "./components/Textform";
 import React, { useState } from "react";
+// import { Route, Routes } from "react-router-dom";
+
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -54,7 +57,7 @@ function App() {
         }, 1000);
         document.body.style.backgroundColor = "white";
         setColor("white");
-        setMode('light');
+        
       } 
       else 
       {
@@ -65,7 +68,7 @@ function App() {
         setTimeout(() => {
           setAlert(null);
         }, 1000);
-        setMode('dark');
+      
       }
     } 
     else if (e.target.id === "2") 
@@ -79,7 +82,7 @@ function App() {
         setTimeout(() => {
           setAlert(null);
         }, 1000);
-        setMode('light');
+        
       } 
       else 
       {
@@ -90,7 +93,7 @@ function App() {
         setTimeout(() => {
           setAlert(null);
         }, 1000);
-        setMode('dark');
+      
       }
     } 
     else
@@ -104,7 +107,7 @@ function App() {
         setTimeout(() => {
           setAlert(null);
         }, 1000);
-        setMode('light');
+        
       } 
       else 
       {
@@ -115,7 +118,7 @@ function App() {
         setTimeout(() => {
           setAlert(null);
         }, 1000);
-        setMode('dark');
+      
       }
     }
   };
@@ -126,7 +129,7 @@ function App() {
       <Navbar
         title="Textutils"
         about="Crushes"
-        link="Contact"
+        link="About"
         anlink="Gallery"
         mode={mode}
         toggleMode={changeMode}
@@ -134,19 +137,30 @@ function App() {
         Color={color}
       />
       <Alert alert={alert} />
-     
+        
         <div className="container my-3">
+        {/* <Routes>
+        <Route path='/about' element={<About/>}/>
+        
+        <Route path='/' element={
          <Textform
           heading="Enter your comments here"
           Color={color}
           mode={mode}
           showAlert={showAlert}
           setAlert={setAlert}
-        /> 
+          />}/>
+        </Routes> */}
+         <Textform
+          heading="Enter your comments here"
+          Color={color}
+          mode={mode}
+          showAlert={showAlert}
+          setAlert={setAlert}
+          />
+          {/* <About/>  */}
        </div> 
-
-       {/* <About/> */}
-    </>
+       </> 
   );
 }
 export default App;

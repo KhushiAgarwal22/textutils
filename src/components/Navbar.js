@@ -1,31 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types"; //impt
 import './NavBar.css';
-//import { BrowserRouter as Router } from "react-router-dom";
-//import { HashLink as Link } from "react-router-hash-link";
+// import {Link} from 'react-router-dom';
+// import {HashLink} from 'react-router-hash-link'
+//import { BrowserRouter as Router } from "react-router-dom"
 export default function Navbar(props) {
   //changing light dark mode
-  const ChangeMode = () => {
-    if (
-      document.getElementById("root").style.backgroundColor === "cyan" ||
-      document.getElementById("root").style.backgroundColor === ""
-    ) {
-      console.log(document.getElementById("root").style.backgroundColor);
-      document.getElementById("root").style.backgroundColor = "darkblue";
-      document.getElementById("root").style.color = "white";
-      document.getElementById("dark/light").style.backgroundColor = "black";
-      document.getElementById("dark/light").style.color = "white";
-      document.getElementById("dark/light").innerText = "Light Mode";
-      document.getElementById("nav").setAttribute("data-bs-theme", "dark");
-    } else {
-      document.getElementById("root").style.backgroundColor = "cyan";
-      document.getElementById("root").style.color = "black";
-      document.getElementById("dark/light").style.backgroundColor = "lightgrey";
-      document.getElementById("dark/light").style.color = "black";
-      document.getElementById("dark/light").innerText = "Dark Mode";
-      document.getElementById("nav").setAttribute("data-bs-theme", "lightgrey");
-    }
-  };
+  // const ChangeMode = () => {
+  //   if (
+  //     document.getElementById("root").style.backgroundColor === "cyan" ||
+  //     document.getElementById("root").style.backgroundColor === ""
+  //   ) {
+  //     console.log(document.getElementById("root").style.backgroundColor);
+  //     document.getElementById("root").style.backgroundColor = "darkblue";
+  //     document.getElementById("root").style.color = "white";
+  //     document.getElementById("dark/light").style.backgroundColor = "black";
+  //     document.getElementById("dark/light").style.color = "white";
+  //     document.getElementById("dark/light").innerText = "Light Mode";
+  //     document.getElementById("nav").setAttribute("data-bs-theme", "dark");
+  //   } else {
+  //     document.getElementById("root").style.backgroundColor = "cyan";
+  //     document.getElementById("root").style.color = "black";
+  //     document.getElementById("dark/light").style.backgroundColor = "lightgrey";
+  //     document.getElementById("dark/light").style.color = "black";
+  //     document.getElementById("dark/light").innerText = "Dark Mode";
+  //     document.getElementById("nav").setAttribute("data-bs-theme", "lightgrey");
+  //   }
+  // };
   //usestates can also be used
   // const [mystyle,setMystyle]= useState{
   //       color:'blue',
@@ -106,7 +107,7 @@ export default function Navbar(props) {
                 {props.anlink}
               </a>
             </li>
-            <li>
+            {/* <li>
               <button
                 className={`btn btn-${props.mode==='light'?'dark':'light'} mx-2 my-1`}
                 id="dark/light"
@@ -114,7 +115,7 @@ export default function Navbar(props) {
               >
                 Dark Mode
               </button>
-            </li>
+            </li> */}
             <li>
               <div className="form-check form-switch my-2 mx-3">
                 <input
