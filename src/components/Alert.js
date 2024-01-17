@@ -5,7 +5,8 @@ export default function Alert(props) {
     return msg.charAt(0).toUpperCase() + msg.slice(1);
   };
   return (
-    props.alert &&
+    <div style={{height:'50px'}}>
+    {props.alert &&
     <div>
       <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
         <strong>
@@ -13,6 +14,7 @@ export default function Alert(props) {
             </strong><span> </span>
              {cap(props.alert.msg)}
       </div>
+    </div>}
     </div>
   );
 }

@@ -57,12 +57,12 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarScroll">
           <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <a className="nav-link active" aria-current="page" href="#">
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <a className="nav-link" href="#">
                 {props.link}
               </a>
             </li>
@@ -78,12 +78,12 @@ export default function Navbar(props) {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/">
+                  <a className="dropdown-item" href="#">
                     Sidharth Malhotra
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/">
+                  <a className="dropdown-item" href="#">
                     Kartik Goenka
                   </a>
                 </li>
@@ -91,22 +91,22 @@ export default function Navbar(props) {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/">
+                  <a className="dropdown-item" href="#">
                    Taylor Zakhar Parez
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/">
+                  <a className="dropdown-item" href="#">
                    Gavin Caselgno
                   </a>
                 </li>
               </ul>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className={`nav-link disabled text-${props.mode==='light'?'dark':'light'}`} aria-disabled="true" href="/">
                 {props.anlink}
               </a>
-            </li>
+            </li> */}
             {/* <li>
               <button
                 className={`btn btn-${props.mode==='light'?'dark':'light'} mx-2 my-1`}

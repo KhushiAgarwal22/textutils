@@ -92,6 +92,7 @@ export default function Textform(props) {
 
   const ClearText = () =>{
     setText('');
+    setcount(0);
   }
   const [text, setText] = useState("");
   const [count, setcount] = useState(0);
@@ -110,28 +111,28 @@ export default function Textform(props) {
             value={text}
             id="myBox"
             rows="8"
-            style={{backgroundColor:props.Color,color:props.Color==='grey'?'white':'black',cursor:'pointer'}}
+            style={{backgroundColor:props.Color,color:props.Color==='white'?'black':'white',cursor:'pointer'}}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={ConvertUpCase}>
+        <button disabled={text.trim().length===0} className="btn btn-primary mx-2 my-1" onClick={ConvertUpCase}>
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={ConvertLoCase}>
+        <button disabled={text.trim().length===0} className="btn btn-primary mx-2 my-1" onClick={ConvertLoCase}>
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={Convert}>
+        <button disabled={text.trim().length===0} className="btn btn-primary mx-2 my-1" onClick={Convert}>
           Proper indendation
         </button>
-        <button className="btn btn-primary mx-2" onClick={ReverseHandle}>
+        <button disabled={text.trim().length===0} className="btn btn-primary mx-2 my-1" onClick={ReverseHandle}>
           Reverse String
         </button>
-        <button className="btn btn-primary mx-2" onClick={CountVowel}>
+        <button disabled={text.trim().length===0} className="btn btn-primary mx-2 my-1" onClick={CountVowel}>
           Vowel count
         </button>
-        <button className="btn btn-primary mx-2" onClick={CopyText}>
+        <button disabled={text.trim().length===0} className="btn btn-primary mx-2 my-1" onClick={CopyText}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={ClearText}>
+        <button disabled={text.trim().length===0} className="btn btn-primary mx-2 my-1" onClick={ClearText}>
           Clear Text
         </button>
       </div>
